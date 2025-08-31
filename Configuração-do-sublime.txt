@@ -1,0 +1,242 @@
+========================================
+  📘 GUIA COMPLETO DO SUBLIME TEXT
+  PARA PROGRAMAÇÃO ESTILO IDE
+========================================
+
+Autor: ChatGPT
+Formato: Texto puro (.txt)
+----------------------------------------
+
+ÍNDICE:
+1. Instalação
+2. Conceitos básicos
+3. Atalhos e comandos nativos
+4. Configuração (Settings)
+5. Package Control e Plugins
+6. Autocomplete avançado (LSP)
+7. Split de janelas
+8. Terminal integrado (Terminus)
+9. Explorer lateral e Git
+10. Exemplos práticos
+11. Referências rápidas
+12. Configuração pronta (copiar/colar)
+
+----------------------------------------
+1. INSTALAÇÃO
+----------------------------------------
+
+Linux (Debian/Ubuntu):
+    sudo apt update
+    sudo apt install apt-transport-https curl -y
+    curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /usr/share/keyrings/sublime.gpg
+    echo "deb [signed-by=/usr/share/keyrings/sublime.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    sudo apt update
+    sudo apt install sublime-text
+
+Windows / Mac:
+    Baixar em https://www.sublimetext.com/
+
+Abrir o Sublime com:
+    subl nome_arquivo
+
+----------------------------------------
+2. CONCEITOS BÁSICOS
+----------------------------------------
+
+- Sublime usa uma "Command Palette" (Ctrl+Shift+P) para executar quase tudo.
+- Configurações ficam em JSON (Preferences → Settings).
+- Plugins são gerenciados pelo "Package Control".
+- Funciona com múltiplos splits (painéis lado a lado).
+- Possui autocomplete básico nativo, mas com LSP vira estilo VSCode.
+
+----------------------------------------
+3. ATALHOS E COMANDOS NATIVOS
+----------------------------------------
+
+ARQUIVOS:
+  Ctrl+P                → Abrir arquivo pelo nome
+  Ctrl+N                → Novo arquivo
+  Ctrl+S                → Salvar arquivo
+  Ctrl+Shift+S          → Salvar como
+
+EDIÇÃO:
+  Ctrl+D                → Seleciona próxima ocorrência da palavra
+  Ctrl+L                → Seleciona linha inteira
+  Ctrl+/                → Comentar/Descomentar linha
+  Ctrl+Shift+↑/↓        → Mover linha para cima/baixo
+  Alt+Shift+↑/↓         → Adicionar múltiplos cursores
+  Ctrl+Shift+L          → Selecionar várias linhas ao mesmo tempo
+  Ctrl+H                → Substituir palavra
+  Ctrl+Shift+F          → Buscar em todos os arquivos
+
+JANELAS E SPLITS:
+  Alt+Shift+2           → Dividir verticalmente em 2
+  Alt+Shift+8           → Dividir horizontalmente em 2
+  Ctrl+1/2/3...         → Focar no painel 1, 2, 3...
+  Ctrl+Tab              → Alternar entre abas
+
+VISUALIZAÇÃO:
+  Ctrl+Shift+P          → Abrir Command Palette
+  Ctrl+K, Ctrl+B        → Mostrar/Ocultar Explorer lateral
+  F11                   → Tela cheia
+  Shift+F11             → Modo sem distração
+
+----------------------------------------
+4. CONFIGURAÇÃO (SETTINGS)
+----------------------------------------
+
+Abrir com: Preferences → Settings
+
+----------------------------------------
+5. PACKAGE CONTROL E PLUGINS
+----------------------------------------
+
+Instalar Package Control:
+- Ctrl+Shift+P → "Install Package Control"
+- Reinicie o Sublime
+
+Plugins úteis:
+- SideBarEnhancements  → Explorer lateral poderoso
+- A File Icon          → Ícones de arquivos
+- LSP                  → Autocomplete avançado
+- Terminus             → Terminal integrado
+- GitGutter            → Integração com Git
+- BracketHighlighter   → Destaque de parênteses/chaves
+- All Autocomplete     → Sugestões de palavras do arquivo
+- Dracula Color Scheme → Tema moderno
+
+----------------------------------------
+6. AUTOCOMPLETE AVANÇADO (LSP)
+----------------------------------------
+
+Instalar plugin "LSP" via Package Control.
+
+Instalar servidores de linguagem:
+- Python:
+    pip install 'python-lsp-server[all]'
+- C/C++:
+    sudo apt install clangd
+- JavaScript/TypeScript:
+    npm install -g typescript-language-server
+
+----------------------------------------
+7. SPLIT DE JANELAS
+----------------------------------------
+
+Exemplo prático:
+1. Pressione Alt+Shift+2 → Divide a tela em 2 colunas
+2. Abra main.py em uma aba
+3. Abra utils.py em outra aba
+4. Use Ctrl+1 para focar no painel da esquerda
+5. Use Ctrl+2 para focar no painel da direita
+
+----------------------------------------
+8. TERMINAL INTEGRADO (TERMINUS)
+----------------------------------------
+
+Instalar Terminus via Package Control.
+
+Abrir terminal:
+- Ctrl+Shift+P → "Terminus: Open Default Shell"
+- Pode abrir em splits também
+
+----------------------------------------
+9. EXPLORER LATERAL E GIT
+----------------------------------------
+
+Explorer lateral:
+- Ctrl+K, Ctrl+B → mostra/oculta
+- SideBarEnhancements adiciona opções:
+  - Renomear
+  - Mover
+  - Criar novo arquivo/pasta
+  - Abrir no terminal
+
+Git:
+- Instale GitGutter
+- Mostra no editor:
+  Verde → Linha adicionada
+  Vermelho → Linha removida
+  Azul → Linha modificada
+
+----------------------------------------
+10. EXEMPLOS PRÁTICOS
+----------------------------------------
+
+- Substituir todas as ocorrências de "foo" por "bar":
+  Ctrl+H → Buscar "foo" → Substituir por "bar" → Replace All
+
+- Editar várias linhas ao mesmo tempo:
+  Selecione linhas → Ctrl+Shift+L → digite em todas juntas
+
+- Abrir projeto e dividir tela:
+  File → Open Folder → escolha diretório
+  Alt+Shift+2 → split vertical
+  Abra main.c na esquerda e utils.c na direita
+
+- Rodar código Python no terminal integrado:
+  Ctrl+Shift+P → Terminus → "Open Default Shell"
+  Digite:
+      python3 main.py
+
+----------------------------------------
+11. REFERÊNCIAS RÁPIDAS
+----------------------------------------
+
+Comandos principais:
+- Ctrl+P          → abrir arquivo
+- Ctrl+Shift+P    → Command Palette
+- Ctrl+D          → selecionar próxima ocorrência
+- Ctrl+Shift+F    → buscar em todos os arquivos
+- Alt+Shift+2     → split vertical
+- Ctrl+K, Ctrl+B  → mostrar/ocultar explorer
+- F12             → ir para definição (com LSP)
+- Ctrl+K, Ctrl+I  → documentação hover (LSP)
+- Ctrl+/          → comentar/descomentar linha
+- Ctrl+Shift+↑/↓  → mover linha
+- Alt+Shift+↑/↓   → múltiplos cursores
+- Ctrl+Shift+L    → editar múltiplas linhas
+- Ctrl+H          → substituir
+
+----------------------------------------
+12. CONFIGURAÇÃO PRONTA (COPIAR/COLAR)
+----------------------------------------
+
+Arquivo: Preferences.sublime-settings
+(Local: Preferences → Settings → Cole no lado direito)
+
+{
+    "font_size": 13,
+    "ignored_packages": ["Vintage"],
+    "theme": "Adaptive.sublime-theme",
+    "color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+    "highlight_line": true,
+    "line_numbers": true,
+    "word_wrap": false,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "ensure_newline_at_eof_on_save": true,
+    "trim_trailing_white_space_on_save": true,
+    "draw_white_space": "all",
+    "overlay_scroll_bars": "enabled",
+    "scroll_past_end": true
+}
+
+Plugins recomendados para instalar via Package Control:
+- SideBarEnhancements
+- A File Icon
+- LSP
+- Terminus
+- GitGutter
+- BracketHighlighter
+- All Autocomplete
+- Dracula Color Scheme
+
+Tema:
+- Instale o "Dracula Color Scheme"
+- Vá em Preferences → Color Scheme → escolha "Dracula"
+- Agora seu Sublime ficará com um visual moderno estilo VSCode
+
+========================================
+FIM DO GUIA
+========================================
